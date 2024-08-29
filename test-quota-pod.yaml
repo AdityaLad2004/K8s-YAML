@@ -1,0 +1,17 @@
+# test-quota-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: quota-test-pod
+  namespace: resource-quota-example
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    resources:
+      requests:
+        memory: "1.5Gi"
+        cpu: "1.5"
+      limits:
+        memory: "3Gi"
+        cpu: "3"
